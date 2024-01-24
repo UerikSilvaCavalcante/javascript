@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(75, 137, 158);
+            color: white;
+            font: normal 18px Arial;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Iniciando estudos DOM</h1>
+    <p>Aqui vai o Resultado</p>
+    <p>Aprendendo a Usar <strong>DOM</strong> em Javascript</p>
+    <form action="" method="get">
+        <label for="in1">n1</label>
+        <input type="number" name="n1" id="in1">
+        <br>
+        <label for="in2">n2</label>
+        <input type="number" name="n2" id="in2">
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+    <!-- DOM = Document Objetct  -->
+    <div>Clique em mim</div>
+    <script>
+        var p1 = window.document.getElementsByTagName('p')[1]
+        window.document.write(p1.innerText)
+        var num1 = window.document.getElementsByName('n1')
+        var num2 = window.document.getElementsByName('n2')
+        var soma = Number(n1) + Number(n2)
+        window.document.write(soma)
+
+    </script>
+</body>
+</html>

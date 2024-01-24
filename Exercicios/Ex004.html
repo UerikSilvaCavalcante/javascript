@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Testadando Java script</h1>
+    <form action="" method="get">
+        <label for="in1">Digite um numero</label>
+        <input type="number" name="n1" id="in1"><br>
+        <label for="in2">Digite um outro numero</label>
+        <input type="number" name="n2" id="in2">
+    </form>
+    <script>
+        var nome = window.prompt('Qual o seu nome')
+        document.write(`O nome <strong>${nome}</strong> tem <strong>${nome.length}</strong> letras <br>`)
+        document.write(`Seu nome ein maiusculas é ${nome.toUpperCase()}`)
+
+        var num1 = Number(n1)
+        var num2 = Number(n2)
+        var soma = n1 + n2
+        document.write('Resultado:'+ soma)
+
+
+        // n1.ToFixed(2) mostra os numerors dps do ponto
+        // n1.ToFixed(2).replace()
+        // n1.ToLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
+    </script>
+</body>
+</html>

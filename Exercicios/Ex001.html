@@ -51,15 +51,24 @@
         }
     </style>
 </head>
-<body>
+<body>    
     <header>
         <h1>Aprendendo Javascript</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum optio ipsam atque quasi fuga nobis officiis laborum dicta iure aliquam assumenda sapiente modi voluptas possimus, eos consequuntur, voluptate nemo quas.</p>
         <p id="M">Ola, Mundo!</p>
         <script>
-            window.alert('Minha primeira mensagem!')
-            window.confirm('Está gostando de JS')
-            window.prompt('Qual o seu nome?')
+            // window.alert('Minha primeira mensagem!')
+            // window.confirm('Está gostando de JS')
+            var n1 = window.prompt('Digite um numero: ') // strindg
+            var n2 = window.prompt('Digite um numero: ') //string
+            // Number.parseFloat(n)
+            // Number.parseInt(n)
+            var soma = Number.parseFloat(n1) + Number.parseFloat(n2)
+            window.alert(`A soma entre ${n1} e ${n2} é igual a ${soma}` )
+
+        // s.length conta os caracteres 
+        // s.toUpperCase() letras maiusculas
+        // s.toLowerCase() letra minusculas
         </script>
     </header>
 </body>
