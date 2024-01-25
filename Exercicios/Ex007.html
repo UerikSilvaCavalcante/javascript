@@ -21,7 +21,9 @@
             var n2 = Number(tn2.value)
 
             var s = n1 + n2
-            res.innerHTML = ` A soma entre ${n1} e ${n2} é igual a ${s} `
+
+            if (s % 2 == 0) {res.innerHTML = ` A soma entre ${n1} e ${n2} é igual a ${s} que é um numero par! `} else {res.innerHTML = ` A soma entre ${n1} e ${n2} é igual a ${s} que é um numero impar! `}
+            
         }
     </script>
 </body>
