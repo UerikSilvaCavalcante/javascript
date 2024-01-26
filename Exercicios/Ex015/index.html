@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        html, body {
+            background-color: rgb(0, 140, 255);
+        }
+
+        header {
+            text-align: center;
+            color: white;
+            padding: 30px;
+            font-size: 30px;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        main {
+            background-color: white;
+            margin: auto;
+            width: 50vw;
+            padding: 20px;
+            border-radius: 20px;
+        }
+
+        form {
+            font-size: 30px;
+        }
+
+        p {
+            text-align: justify;
+            padding: 20px;
+        }
+
+        input {
+            height: 20px;
+        }
+
+        input.bt {
+            height: 30px;
+            width: 60px;
+        }
+
+        div#Contagem {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Vamos Calcular</h1>
+    </header>
+    <main>
+        <form action="" method="get">
+            <p>
+                <label for="Inicio">Inicio:</label>
+                <input type="number" name="Inicio" id="Inicio" required>
+            </p>
+            <p>
+                <label for="fim">Fim:</label>
+                <input type="number" name="fim" id="fim" required>
+            </p>
+            <p>
+                <label for="passo">Passo:</label>
+                <input type="number" name="passo" id="passo" required>
+            </p>
+            <p>
+                <input type="button" value="Contar" class="bt" onclick="contar()">
+                <input type="reset" value="Limpar" class="bt">
+            </p>
+        </form>
+        <p id="txt">Contando....</p>
+        <div id="Contagem">
+
+        </div>
+    </main>
+    <footer>
+        <p style="color: white; text-align: center;">
+            &copy; Uerik Saldanha
+        </p>
+    </footer>
+    <script>
+        function Limpar () {
+            var limp = window.document.getElementById('Contagem')
+            limp.innerHTML = ''
+
+        }
+        function contar() {
+            Limpar()
+            var inicio = window.document.getElementById('Inicio')
+            var fimm = window.document.getElementById('fim')
+            var passo = window.document.getElementById('passo')
+            var cont = window.document.getElementById('Contagem')
+            var txt = window.document.getElementById('txt')
+
+            if (inicio.value.length == 0 || fimm.value.length == 0 || passo.value.length == 0) {
+                txt.innerHTML = 'Impossivel contar'
+            } else {
+                var ini = Number(inicio.value) 
+                var fim = Number(fimm.value)
+                var pass = Number(passo.value)
+                txt.innerHTML = 'Contando'     
+
+            if (ini > fim) {
+                while (ini >= fim) {
+                    cont.innerHTML += `${ini}  \u{1F449}`
+                    ini -= pass
+                }
+            }  else {
+                while(ini <= fim) {
+                    cont.innerHTML += 
+                    ini += pass
+                }
+            }
+            cont.innerHTML += `\u{1F3C1}`
+            }
+           
+            
+        }
+    </script>
+</body>
+</html>
