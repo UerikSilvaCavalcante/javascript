@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>audio-book</title>
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <script src="https://kit.fontawesome.com/157e26f633.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="content">
+            <div class="img">
+                <img src="images/dom-casmurro.jpeg" alt="dom-casmurro">
+            </div>
+            <div class="text">
+                <p class="cap">Capitulo 1</p>
+                <p class="autor">Dom Casmurro</p>
+            </div>
+            <div class="btns">
+                <audio id='audio-capitulo' src="/books/dom-casmurro/1.mp3"></audio>
+                <button class="voltar"><i class="fa-solid fa-backward-fast"></i></button>
+                <button class="PlayPause"><i class="fa-solid fa-play" id="icon-play"></i></button>
+                <button class="avansar"><i class="fa-solid fa-forward-fast"></i></button>
+            </div>
+        </div>
+    </div>
+    <script src="script/java.js"></script>
+</body>
+</html>
