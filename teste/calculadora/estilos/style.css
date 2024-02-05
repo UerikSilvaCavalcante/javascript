@@ -59,8 +59,8 @@ html, body {
 }
 
 button {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     font-size: 30px;
     background-color: black;
     color: white;
@@ -69,8 +69,8 @@ button {
 }
 
 .btns input {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
     margin: 5px;
     font-size: 30px;
 }

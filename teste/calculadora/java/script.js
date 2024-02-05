@@ -71,6 +71,21 @@ sub.addEventListener("click", () => {
     barra.value += ' - '
 })
 
+const multi = document.getElementById('vezes');
+multi.addEventListener("click", ()=> {
+    barra.value += ' * '
+})
+
+const div = document.getElementById('div');
+div.addEventListener("click", () => {
+    barra.value += ' / '
+})
+
+const porcentagem = document.getElementById('porcent');
+porcentagem.addEventListener("click", ()=> {
+    barra.value += ' % '
+})
+
 const igual = document.getElementById("igual");
 
 function calcular(){
@@ -79,3 +94,12 @@ function calcular(){
 }
 
 igual.addEventListener("click", calcular);
+
+function apagar() {
+    num = barra.value;
+    barra.value = num.substring(0, num.length -1);
+}
+
+const apag = document.getElementById('apaga');
+
+apag.addEventListener("click", apagar);
