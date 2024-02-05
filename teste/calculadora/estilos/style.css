@@ -21,8 +21,8 @@ html, body {
 
 .content {
     background-color: black;
-    width: 30%;
-    height: 80%;
+    width: 600px;
+    height: 90%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,9 +41,10 @@ html, body {
 }
 
 .calc input{
-    width: 90%;
+    width: 95%;
     height: 70px;
-    margin: 30px;
+    margin-left: 15px;
+    margin-bottom: 15px;
     font-size: 20px;
     text-align: right;
 }
@@ -54,12 +55,12 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 30px;
+    margin-bottom: 100px;
 }
 
 button {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
     font-size: 30px;
     background-color: black;
     color: white;
@@ -68,8 +69,8 @@ button {
 }
 
 .btns input {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
     margin: 5px;
     font-size: 30px;
 }
