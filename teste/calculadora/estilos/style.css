@@ -26,8 +26,67 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
 }
 
 .title {
     color: white;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+.calculo {
+    width: 100%;
+}
+
+.calc input{
+    width: 90%;
+    height: 70px;
+    margin: 30px;
+    font-size: 20px;
+    text-align: right;
+}
+
+
+.btns {
+    width: 88%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+button {
+    width: 110px;
+    height: 110px;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    margin: 5px;
+    border: 1px solid white;
+}
+
+.btns input {
+    width: 110px;
+    height: 110px;
+    margin: 5px;
+    font-size: 30px;
+}
+
+.op {
+    background-color: rgb(187, 121, 0);
+}
+
+.op:hover {
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    background-color: orange;
+}
+
+button:hover {
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+    background-color: white;
+    color: black;
 }
