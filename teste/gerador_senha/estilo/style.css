@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.conteiner {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: height 0.5s, width 0.5s;
+    height: 60%;
+    background-color: white;
+    width: 400px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.title {
+    background-color: blueviolet;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+    color: white;
+    text-transform: uppercase;
+}
+
+h2 {
+    text-align: center;
+}
+
+.password p#senha {
+    border: 1px solid black;
+    width: 300px;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    color: lightgray;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    margin-bottom: 50px;
+}
+
+button {
+    background-color: white;
+    width: 300px;
+    height: 50px;
+    border: 2px solid blueviolet;
+    border-radius: 20px;
+    color: blueviolet;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+button:hover{
+    transition-duration: 0.3s;
+    background-color: blueviolet;
+    border-color: white;
+    color: white;
+}
+
