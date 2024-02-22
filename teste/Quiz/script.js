@@ -15,27 +15,70 @@ let content = document.getElementById("icontent");
 let title = document.getElementById("ititle");
 let iniciar = document.getElementById("init")
 
+let intervalo;
+let contador = 30
+let isTime = false
+
+let acertos = 0
+
+const act = document.getElementById("act")
+let num_act = document.getElementById("iacertos")
+
+let btn_recomeça = document.getElementById("recomeçar")
+
 const perguntas = [
-    {pergunta :"Qual é o maior planeta do sistema solar?" , 
-    opcoes :["A) Terra", 'B) Júpiter', 'C) Saturno', 'D) Marte'], 
-    correta :'B) Júpiter'},
-
-    {pergunta :'Quem escreveu a obra "Dom Quixote"?', 
-    opcoes :["A) William Shakespeare", 'B) Miguel de Cervantes', 'C) Dante Alighieri', 'D) Voltaire'], 
-    correta :'B) Miguel de Cervantes'},
-
-    {pergunta :"Qual é o símbolo químico do ouro?" , 
-    opcoes :["A) Ag", 'B) Au', 'C) Fe', 'D) Pb'], 
-    correta :'B) Au'}, 
-
-    {pergunta :'Quem pintou a obra "Mona Lisa"?' , 
-    opcoes :["A) Pablo Picasso", 'B) Leonardo da Vinci', 'C) Michelangelo', 'D) Vincent van Gogh'], 
-    correta :'B) Leonardo da Vinci'},
-
-    {pergunta :"Qual é a capital do Canadá?" , 
-    opcoes :["A) Vancouver", 'B) Toronto', 'C) Montreal', 'D) Ottawa'], 
-    correta :'D) Ottawa'},   
+    {
+        "pergunta": "Qual é o maior planeta do sistema solar?",
+        "opcoes": ["A) Terra", "B) Júpiter", "C) Saturno", "D) Marte"],
+        "correta": "B) Júpiter"
+    },
+    {
+        "pergunta": "Quem escreveu a obra 'Dom Quixote'?",
+        "opcoes": ["A) William Shakespeare", "B) Miguel de Cervantes", "C) Dante Alighieri", "D) Voltaire"],
+        "correta": "B) Miguel de Cervantes"
+    },
+    {
+        "pergunta": "Qual é o símbolo químico do ouro?",
+        "opcoes": ["A) Ag", "B) Au", "C) Fe", "D) Pb"],
+        "correta": "B) Au"
+    },
+    {
+        "pergunta": "Qual é o maior oceano do mundo em extensão?",
+        "opcoes": ["A) Oceano Índico", "B) Oceano Pacífico", "C) Oceano Atlântico", "D) Oceano Ártico"],
+        "correta": "B) Oceano Pacífico"
+    },
+    {
+        "pergunta": "Quem pintou a obra 'Mona Lisa'?",
+        "opcoes": ["A) Pablo Picasso", "B) Leonardo da Vinci", "C) Michelangelo", "D) Vincent van Gogh"],
+        "correta": "B) Leonardo da Vinci"
+    },
+    {
+        "pergunta": "Qual é a capital do Canadá?",
+        "opcoes": ["A) Vancouver", "B) Toronto", "C) Montreal", "D) Ottawa"],
+        "correta": "D) Ottawa"
+    },
+    {
+        "pergunta": "Qual é a montanha mais alta do mundo?",
+        "opcoes": ["A) Everest", "B) K2", "C) Kilimanjaro", "D) Mont Blanc"],
+        "correta": "A) Everest"
+    },
+    {
+        "pergunta": "Quem foi o primeiro presidente do Brasil?",
+        "opcoes": ["A) Getúlio Vargas", "B) Juscelino Kubitschek", "C) Marechal Deodoro da Fonseca", "D) Tancredo Neves"],
+        "correta": "C) Marechal Deodoro da Fonseca"
+    },
+    {
+        "pergunta": "Qual é o metal líquido à temperatura ambiente?",
+        "opcoes": ["A) Ferro", "B) Ouro", "C) Mercúrio", "D) Alumínio"],
+        "correta": "C) Mercúrio"
+    },
+    {
+        "pergunta": "Qual é a capital da Argentina?",
+        "opcoes": ["A) Santiago", "B) Buenos Aires", "C) Rio de Janeiro", "D) Lima"],
+        "correta": "B) Buenos Aires"
+    }
 ]
+
 
 
 var num = 0;
@@ -68,7 +111,8 @@ function showPopupError(){
         conteiner.classList.remove("errado")
         gera_pergunta()
         botoes()
-    }, 3000)
+        tempo_resp()
+    }, 2000)
   
 }
 
@@ -78,30 +122,23 @@ function showPopupAcerto(){
         conteiner.classList.remove("right")
         gera_pergunta()
         botoes()
-    }, 3000)
+        tempo_resp()
+    }, 2000)
    
 }
 
-let intervalo;
-let contador = 30
-let isTime = true
+
 
 function tempo_resp(){
-    
     intervalo = setInterval(()=>{
-        if (isTime == true){
-            contador --
-            cont.innerText = formatTime(contador)
-            if(contador <= 0){
-                isTime = false
-                console.log(contador)
-                confere_resp()
-                return contador
-                
-            }
+        cont.innerText = formatTime(contador)
+        contador --
+        if(contador <= 0){
+            clearInterval(intervalo)
+            console.log(contador)
+            confer_inativo()
         }
-    }, 1000)
-    console.log(contador)    
+    }, 1000)  
 }
 
 
@@ -110,42 +147,53 @@ function formatTime(tempo){
     return tempo < 10 ? `0${tempo}` : tempo;
 }
 
-let acertos = 0
 
-// tempo_resp()
 
-function confere_resp(resposta){
-    correct = perguntas[num].correta
-    console.log(correct)
-    isClose = true;
-    let tempo = tempo_resp()
-
-    if (num >= 4){
-        num = 0
-        console.log(acertos)
-    } else {
-        num ++
-    }
-    if (tempo <= 0){
+function confer_inativo(){
+    console.log(contador)
+    if (contador <= 0){
+        if (num >= 9){
+            num = 0
+            console.log(acertos)
+        } else {
+            num ++
+        }
         showPopupError()
         contador = 30
+    } 
+}
+
+function confere_resp(resposta){
+    correct = perguntas[num].correta;
+    console.log(correct);
+    isClose = true;
+    clearInterval(intervalo)
+    contador = 30
+    if (num >= 9){
+        num = 0
+        iniciar.style.display = 'none'
+        content.style.display = 'none'
+        title.style.display = 'none'
+        act.style.display = 'flex'
+        cont.style.display = 'none'
+        num_act.textContent = `${acertos + 1}/10`
     } else {
+        num ++
         if (resposta == correct){
             acertos ++
+            console.log("acertos " + acertos)
             console.log(num)
             console.log("certa")
             showPopupAcerto()
         } else {
-           
             showPopupError()
             console.log(num)
         }
     }
+   
     
 }
-
-while (content.sty)
-
+    
 
 console.log(btn_1.textContent)
 btn_1.addEventListener("click", function() {
@@ -166,6 +214,12 @@ btn_iniciar.addEventListener("click", ()=>{
     iniciar.style.display = 'none'
     content.style.display = 'flex'
     title.style.display = 'block'
+    isTime = true
     tempo_resp()
+})
+
+btn_recomeça.addEventListener("click", () => {
+    iniciar.style.display = 'flex'
+    act.style.display = "none"
 })
 
