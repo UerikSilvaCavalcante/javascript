@@ -109,9 +109,18 @@ function showPopupError(){
     conteiner.classList.add("errado")
     setTimeout(()=> {
         conteiner.classList.remove("errado")
+        if (num >= 10){
+            iniciar.style.display = 'none'
+            content.style.display = 'none'
+            title.style.display = 'none'
+            act.style.display = 'flex'
+            cont.style.display = 'none'
+            num_act.textContent = `${acertos + 1}/10`
+        } else {
         gera_pergunta()
         botoes()
         tempo_resp()
+        }
     }, 2000)
   
 }
@@ -120,9 +129,18 @@ function showPopupAcerto(){
     conteiner.classList.add("right")
     setTimeout(()=> {
         conteiner.classList.remove("right")
+        if (num >= 10){
+            iniciar.style.display = 'none'
+            content.style.display = 'none'
+            title.style.display = 'none'
+            act.style.display = 'flex'
+            cont.style.display = 'none'
+            num_act.textContent = `${acertos}/10`
+        } else {
         gera_pergunta()
         botoes()
         tempo_resp()
+        }
     }, 2000)
    
 }
@@ -152,9 +170,9 @@ function formatTime(tempo){
 function confer_inativo(){
     console.log(contador)
     if (contador <= 0){
-        if (num >= 9){
+        if (num >= 10){
             num = 0
-            console.log(acertos)
+            showPopupError()
         } else {
             num ++
         }
@@ -169,14 +187,14 @@ function confere_resp(resposta){
     isClose = true;
     clearInterval(intervalo)
     contador = 30
-    if (num >= 9){
+    if (num >= 10){   
+        if (resposta == correct){
+           showPopupAcerto() 
+        } else {
+            showPopupError()
+        }
+
         num = 0
-        iniciar.style.display = 'none'
-        content.style.display = 'none'
-        title.style.display = 'none'
-        act.style.display = 'flex'
-        cont.style.display = 'none'
-        num_act.textContent = `${acertos + 1}/10`
     } else {
         num ++
         if (resposta == correct){
@@ -214,6 +232,7 @@ btn_iniciar.addEventListener("click", ()=>{
     iniciar.style.display = 'none'
     content.style.display = 'flex'
     title.style.display = 'block'
+    cont.style.display = 'flex'
     isTime = true
     tempo_resp()
 })
