@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .conteiner {
+            display:  flex;
+            width: 100vw;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .title {
+            font-size: 3em;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: antiquewhite;
+            padding: 10px;
+            border-radius: 10px ;
+        }
+
+        .content {
+            background-color: antiquewhite;
+            margin-top: 50px;
+            width: 50%;
+            height: 40%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .resultado {
+            background-color: white;
+            width: 60%;
+            height: 50%;
+            border: 2px solid black;
+            padding: 30px;
+        }
+
+        #num {
+            text-align: center;
+            font-size: 1.2em;
+            padding: 5px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        #fatorial {
+            font-size: 1.3em;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #btn_calculo {
+            width: 100px;
+            height: 30px;
+            background-color: cornflowerblue;
+            border: 2px solid antiquewhite;
+            border-radius: 10px;
+
+        }
+
+        #btn_calculo:hover {
+            transition: all .5s ease;
+            background-color: antiquewhite;
+            border: 2px solid cornflowerblue
+        }
+        
+        #btn_calculo:active{
+            transition: all .1s ease-out;
+            transform: scale(.8);
+            background-color:  burlywood;
+            border: 2px solid cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="title">
+            <h1>Fatorial</h1>
+        </div>
+        <div class="content">
+            <div class="input">
+                <form action="" method="get">
+                    <input type="number" name="num" id="num">
+                </form>
+            </div>
+            <button id="btn_calculo">Fatorial</button>
+            <div class="resultado">
+                <p id="fatorial">
+                    Numeros
+                </p>
+            </div>
+        </div>  
+    </div>
+
+    <script>
+        const numero = document.getElementById("num")
+
+        let btn = document.getElementById("btn_calculo")
+        btn.addEventListener("click", () => {
+            let num = Number(numero.value)
+            
+            const fat = document.getElementById("fatorial")
+            let range = num;
+            let f = 1;
+            fat.textContent = ""
+            for (let c = 0; c <= range; c ++){
+                if (num > 1){
+                    f *= num
+                    fat.textContent += `${num} X `
+                } else {
+                    fat.textContent += `${num} = `
+                    break
+                }
+                num --
+            }
+
+            fat.textContent += f
+
+          
+        })
+    </script>
+</body>
+</html>
