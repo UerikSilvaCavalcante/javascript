@@ -6,11 +6,16 @@ async function getProd() {
 
 getProd().then(data => console.table(data))
 
-// getProd().then(data => {
-//     for (let i of data){
-//         console.log(i)
-//     }
-// })
+getProd().then(data => {
+    let petisqueira = data.filter(elem => elem.tipo == 'Petisqueira')
+    console.log("Tabela de petisqueiras")
+    console.table(petisqueira)
+    let soma = 0
+    for (let c = 0; c < petisqueira.length; c ++){
+        soma += Number(petisqueira[c].quantidade)
+    }
+    console.log(`Soma da quantidade de Petisqueiras ${soma}`)
+})
 
 
 // getProd().then(data => {
