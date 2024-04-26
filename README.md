@@ -8,3 +8,5 @@
 <a href="teste/gerador_senha/index.html"> Gerador de senha</a>
 
 <a href="teste/Quiz/index.html" > Quiz </a>
+
+<a href="teste/Pega_CEP/html/index.html" > Busca CEP </a>

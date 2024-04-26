@@ -105,11 +105,11 @@ async function getPeople() {
     return response.json()
 }
 
-getPeople().then(data => console.log(data))
+// getPeople().then(data => console.log(data))
 
 getPeople().then(data => {
     const pessoas = data.results
-    console.log(pessoas.filter(p => p.gender == "female"))
+    // console.log(pessoas.filter(p => p.gender == "female"))
 })
 
 getPeople().then(data => {
