@@ -16,10 +16,10 @@ body, html {
     width: 100vw;
     height: 100vh;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
-    /* gap: 10px; */
+    gap: 10px;
 }
 
 .title {
@@ -35,7 +35,7 @@ body, html {
 
 .content {
     background-color: #3B6C4B;
-    width: 70%;
+    width: 90%;
     height: 90%;
     display: flex;
     flex-direction: column;
@@ -116,7 +116,7 @@ i {
 
 .endereco {
     background-color:  #386152;
-    width: 80%;
+    width: 90%;
     height: 60%;
     display: flex;
     flex-direction: column;
@@ -135,7 +135,7 @@ i {
 }
 
 .text {
-    width: 350px;
+    width: 200px;
     background-color: whitesmoke;
     height: 40px;
     border: 2px solid #E0A512;
